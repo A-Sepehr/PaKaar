@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Todo",
+    "slug": "Todo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/ic_launcher.png",
+    "scheme": "todo",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/images/ic_launcher.png",
+        "backgroundImage": "./assets/images/ic_launcher.png",
+        "monochromeImage": "./assets/images/ic_launcher.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/ic_launcher.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/ic_launcher.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4299b2e0-60aa-418b-a3ba-8ee39a8ce805"
+      }
+    }
+  }
+}
