@@ -92,6 +92,9 @@ const [filterState, setFilterState] = useState({
   todoDone: false,
 });
 
+  // Search
+  const [searchQuery, setSearchQuery] = useState('');
+
 // Add Task 
 const [showAddTaskModal, setShowAddTaskModal] = useState(false);
 const [newTaskTitle, setNewTaskTitle] = useState('');
@@ -155,13 +158,23 @@ const toggleCheckbox = (key: keyof typeof filterState) => {
 };
 
 const filteredTasks = tasks.filter(t => {
-  if (filterState.all) return true;
+  // First apply status filter
+  if (!filterState.all) {
+    const pendingOK = filterState.todoPending && t.status === 'pending';
+    const progOK = filterState.todoInProgress && t.status === 'inProgress';
+    const doneOK = filterState.todoDone && t.status === 'done';
 
-  const pendingOK = filterState.todoPending && t.status === 'pending';
-  const progOK = filterState.todoInProgress && t.status === 'inProgress';
-  const doneOK = filterState.todoDone && t.status === 'done';
+    if (!(pendingOK || progOK || doneOK)) return false;
+  }
 
-  return pendingOK || progOK || doneOK;
+  // Then apply search query (title or description)
+  const q = searchQuery.trim().toLowerCase();
+  if (!q) return true;
+
+  const title = (t.title || '').toLowerCase();
+  const desc = (t.description || '').toLowerCase();
+
+  return title.includes(q) || desc.includes(q);
 });
 
 
@@ -382,6 +395,8 @@ useEffect(() => {
             placeholder="جستجوی تسک..."
             placeholderTextColor="#CCC"
             style={styles.searchInput}
+            value={searchQuery}
+            onChangeText={setSearchQuery}
             onFocus={() => shakeAnimation(filterShake)}
           />
         </Animated.View>
