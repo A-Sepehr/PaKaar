@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/ic_launcher.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.a_sepehr.Todo"
     },
     "web": {
       "output": "static",
