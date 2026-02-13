@@ -11,6 +11,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { Alert } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AnimatedFAB,useTheme } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
@@ -48,6 +49,7 @@ const getRemainingTime = (deadline: Date) => {
 
 export default function Home() {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
 
   const { width } = useWindowDimensions();
   const isLargeScreen = width >= 768;
@@ -99,19 +101,6 @@ const [filterState, setFilterState] = useState({
 const [showAddTaskModal, setShowAddTaskModal] = useState(false);
 const [newTaskTitle, setNewTaskTitle] = useState('');
 
-//مهلت باقی مانده
-const getRemainingTime = (deadline: Date) => {
-  const now = new Date().getTime();
-  const diff = new Date(deadline).getTime() - now;
-
-  if (diff <= 0) return 'مهلت تمام شده';
-
-  const minutes = Math.floor(diff / (1000 * 60)) % 60;
-  const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-  return `${days} روز، ${hours} ساعت، ${minutes} دقیقه`;
-};
 
 // --- State برای Modal تایید حذف و انجام ---
 const [confirmModal, setConfirmModal] = useState<{
@@ -206,7 +195,7 @@ useEffect(() => {
     setTasks(prev => {
       // جلوگیری از اضافه شدن دوباره (اگر صفحه رفرش شد یا params دوباره رسید)
       if (prev.some(t => t.id === task.id)) return prev;
-      return [...prev, task];
+      return [task, ...prev];
     });
   } catch (e) {
     console.warn('Failed to parse newTask param', e);
@@ -308,7 +297,7 @@ useEffect(() => {
 
   return (
     
-    <SafeAreaView style={[styles.container, { backgroundColor: '#1A132C' }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: '#1A132C', paddingTop: (insets.top || 0) + 8 }]}>
       {/* Name Modal */}
       <Modal visible={showNameModal} transparent animationType="fade">
         <View style={styles.modalContainer}>
@@ -580,14 +569,6 @@ useEffect(() => {
 
     
   );
-  type TaskStatus = 'pending' | 'inProgress' | 'done';
-  type Task = {
-  id: string;
-  title: string;
-  description: string;
-  deadline: Date;
-  status: TaskStatus;
-};
 
 function TaskCard({
   task,
