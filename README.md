@@ -56,7 +56,7 @@ nodejs فراموش نشه
 دوستان ios هم بزودی میایم سراغشون 😂
 
 ```bash
-git clone https://github.com/your-username/pakaar.git
+git clone https://github.com/a-sepehr/pakaar.git
 cd pakaar
 npm install
 npx expo start
