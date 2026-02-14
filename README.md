@@ -1,3 +1,12 @@
+![Screenshot_20260214_125503_Todo](https://github.com/user-attachments/assets/b1e58718-6792-42e6-bd30-9b5167d5aba4)
+
+![Screenshot_20260214_125446_Todo](https://github.com/user-attachments/assets/9017f545-8fff-4fbc-8ab3-4396433d46f4)
+
+![Screenshot_20260214_125510_Todo](https://github.com/user-attachments/assets/1300a52a-968c-442f-bd80-9950eab52150)
+
+
+
+
 # 🟣 پا کار PaKaar  
 
 > با پاکار پای کارات بمون
