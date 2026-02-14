@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# 🟣 پا کار PaKaar  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> با پاکار پای کارات باش.
 
-## Get started
+**پا کار** یک اپلیکیشن مینیمال و مدرن مدیریت تسک است که با تمرکز روی سادگی، طراحی نرم و تجربه کاربری روان ساخته شده.  
+هدفمون سادست:  
+کمکت کنه واقعاً پای کارهات بمونی.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## ✨ ویژگی‌ها
 
-2. Start the app
+- 🎯 ساخت تسک با عنوان، توضیحات و مهلت انجام
+- 🗓 انتخاب تاریخ و ساعت با Wheel Picker
+- 🌗 پشتیبانی از تقویم شمسی و میلادی (بر اساس منطقه کاربر)
+- 🔍 جستجو بین تسک‌ها
+- 🗂 فیلتر بر اساس وضعیت:
+  - انجام نشده
+  - در حال انجام
+  - انجام شده
+- 📊 تغییر مرحله‌ای وضعیت تسک‌ها (Pending → In Progress → Done)
+- 💾 ذخیره دائمی تسک‌ها با AsyncStorage
+- 🧠 محاسبه زمان باقی‌مانده تا ددلاین
+- 🎨 طراحی دارک و مینیمال با تم بنفش اختصاصی
+- 📱 ریسپانسیو
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🧱 تکنولوژی‌ها
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- React Native
+- Expo Router
+- TypeScript
+- React Native Paper (Material 3)
+- AsyncStorage
+- Intl API + Jalaali fallback
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📸 طراحی
 
-When you're ready, run:
+- تم دارک بنفش
+- المان های نرم و گرد
+- کارت‌های مینیمال
+- انیمیشن لودینگ و ثبت تسک
+- تجربه کاربری روان و بدون شلوغی
+
+---
+
+## 🚀 نصب و اجرا
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+git clone https://github.com/your-username/pakaar.git
+cd pakaar
+npm install
+npx expo start
